@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mini Compiler — Frontend</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <h1>Mini Compiler</h1>
+        <p class="lead">
+          Ifodani kiriting — <strong>Compile</strong> tugmasi instruktsiyalar
+          roʻyhatini beradi (LOAD, ADD, ...), <strong>Evaluate</strong> esa
+          matematik natijani.
+        </p>
+
+        <label for="expr">Matematik ifoda</label>
+        <input
+          id="expr"
+          type="text"
+          placeholder="masalan: 5 + 3 * (2 - 1) / 2"
+          value="5 + 3 * 2"
+        />
+
+        <div class="row">
+          <button id="btnCompile">Compile → Instruksiyalar</button>
+          <button id="btnEval" class="ghost">
+            Evaluate → Matematik natija
+          </button>
+          <button id="btnClear" class="small ghost" style="margin-left: auto">
+            Tozalash
+          </button>
+        </div>
+
+        <div class="panel" id="feedback" style="margin-top: 14px">
+          <div class="muted">Natijalar bu yerda chiqadi.</div>
+        </div>
+
+        <div class="footer-note">Backend URL: <code id="apiBase">/</code></div>
+      </div>
+
+      <div class="card">
+        <h1>Natija</h1>
+        <p class="lead">Instruksiyalar va oxirgi matematik natija</p>
+
+        <div style="display: flex; gap: 12px">
+          <div style="flex: 1">
+            <div class="muted">Instruksiyalar (ketma-ket bajarilish):</div>
+            <ul
+              class="instructions"
+              id="instructionsList"
+              style="margin-top: 8px"
+            >
+              <!-- to'ldiriladi -->
+            </ul>
+          </div>
+
+          <div style="width: 180px">
+            <div class="muted">Matematik natija:</div>
+            <div class="panel" style="margin-top: 8px; text-align: center">
+              <div id="mathResult" class="result-big">—</div>
+              <div id="resultRaw" class="muted" style="margin-top: 8px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
