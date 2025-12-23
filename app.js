@@ -1,6 +1,5 @@
 (function () {
-  // O'zgartiring agar backend boshqacha host/portda bo'lsa:
-  const API_BASE = "http://localhost:4000"; // blank = same origin. Example: 'http://localhost:3000'
+  const API_BASE = "http://localhost:4001";
   document.getElementById("apiBase").textContent =
     API_BASE || "same origin (/)";
 
